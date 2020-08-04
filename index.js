@@ -12,15 +12,18 @@ function getDogImages() {
 
 function displayResults(responseJson) {
   console.log(responseJson.status);
+  console.log(responseJson);
+  $(".initial").addClass("hidden");
   if (responseJson.status == "error") {
     console.log("It Worked");
     $(".results").removeClass("hidden");
-    $(".results").html(`<h2>${dogBreed} is not a valid breed.`);
+    $(".results").html(`<h2>${dogBreed} is not a valid breed.</h2>`);
   } else {
-    $(".results").removeClass("hidden");
-    $(".breed").replaceWith(
-      `<img src="${responseJson.message}" class="results-img">`
+    $(".results").html(
+      `<h2>Look at the breed you selected!</h2><div class="breed"></div>`
     );
+    $(".results").removeClass("hidden");
+    $(".breed").html(`<img src="${responseJson.message}" class="results-img">`);
   }
   $(".restart").removeClass("hidden");
 }
@@ -36,9 +39,10 @@ function watchForm() {
 
 function restart() {
   $(".restart").on("click", function (event) {
-    $(".initial").replaceWith(initialClone);
-    $(".results").replaceWith(resultsClone);
+    $(".initial").removeClass("hidden");
+    $(".results").addClass("hidden");
     $(".restart").addClass("hidden");
+    $("#dogBreed").val("");
   });
 }
 
