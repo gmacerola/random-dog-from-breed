@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Dog From Breed</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <img src="images/smilingdog1.png" class="head-img" alt="Smiling Dog" />
+      <h1>Choose Your Breed!</h1>
+    </header>
+
+    <main>
+      <form class="initial">
+        <label for="dogBreed">Which Breed Would You Like To See?</label>
+        <input
+          type="text"
+          id="dogBreed"
+          placeholder="Type Dog Breed Here"
+          required
+        />
+        <input type="submit" value="Submit" />
+      </form>
+      <div class="results hidden">
+        <h2>Look at the breed you selected!</h2>
+
+        <img class="breed" alt="placeholder" />
+      </div>
+      <div class="restart hidden">
+        <button type="button" class="restart" id="restart">
+          Different Breed?
+        </button>
+      </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
